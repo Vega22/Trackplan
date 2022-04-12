@@ -1,10 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace Trackplan.Models
 {
     public class MessageModel
     {
-        public MessageModel()
-        {
-        }
+        [Required]
+        public string Message { get; set; }
+
     }
 }

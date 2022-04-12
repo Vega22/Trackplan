@@ -1,8 +1,14 @@
-﻿@{
+﻿@model Trackplan.Models.MessageModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h3>Enter you text</h3>
+    @using (Html.BeginForm("PostPassingText", "Home", FormMethod.Post))
+            {
+                @Html.TextBoxFor(x => x.Message, new { @class = "form-control", placeholder = "text..." }) <br/> <br/>
+                <input type="submit" class="btn btn-primary" value="GO"/>
+
+            }
 </div>

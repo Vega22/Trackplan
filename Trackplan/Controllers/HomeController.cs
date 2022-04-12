@@ -33,5 +33,14 @@ namespace Trackplan.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult PostPassingText(MessageModel text)
+        {
+            if(text.Message != null && text.Message != "")
+            {
+                return View("Diagonal", text);
+            }
+            return View("Index");
+        }
     }
 }
